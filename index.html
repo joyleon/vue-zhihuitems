@@ -6,14 +6,27 @@
 <body>
   <script src="https://npmcdn.com/vue/dist/vue.js"></script>
   <div id=app >
-    {{message}}
+    <p>
+      {{message}}
+    </p>
+    <input v-model="message"  />
+    <ul>
+      <li v-for="todo in todos">
+        {{todo.text}}
+      </li>
+    </ul>
   </div>
 </body>
 <script type="text/javascript" >
   new Vue({
     el:"#app",
     data:{
-      message:"Hello,vue.js"
+      message:'hello,vue.js',
+      todos:[
+        {text:'learn javascript'},
+        {text:'learn vue.js'},
+        {text:'build something awesome'}
+      ]
     }
   })
 </script>
